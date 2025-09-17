@@ -3,7 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './App.css'
 
 class Timer extends Component{
+    constructor() {
+    super();
+    this.state = {
+    time : new Date().toLocaleTimeString()
+    }
+  }
   render(){
+    setInterval(() => {
+      this.setState({
+       time : new Date().toLocaleTimeString()
+      })
+    }, 1000)
     return(
       <h2 className='timer'>
         it is {new Date().toLocaleTimeString()}
@@ -30,7 +41,7 @@ class App extends Component {
   }
 }
 const root = createRoot(document.getElementById('root'));
-const tick = ()=> {
+// const tick = ()=> {
 root.render(<App/>);
-}
-setInterval(tick, 1000);
+// }
+// setInterval(tick, 1000);
