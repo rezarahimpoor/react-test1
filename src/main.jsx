@@ -17,7 +17,7 @@ class Timer extends Component{
     }, 1000)
     return(
       <h2 className='timer'>
-        it is {new Date().toLocaleTimeString()}
+        {/* it is {new Date().toLocaleTimeString()} */ this.state.time}
         
       </h2>
     )
